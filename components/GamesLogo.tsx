@@ -9,7 +9,7 @@ import Animated, {
 
 import { ThemedText } from '@/components/ThemedText';
 
-export function HelloWave() {
+export function GamesLogo() {
   const rotationAnimation = useSharedValue(0);
 
   rotationAnimation.value = withRepeat(
@@ -23,15 +23,28 @@ export function HelloWave() {
 
   return (
     <Animated.View style={animatedStyle}>
-      <ThemedText style={styles.text}>👋</ThemedText>
+      <ThemedText style={styles.text}>{String.fromCodePoint(0x1F9E9)}</ThemedText>
+      <ThemedText style={styles.text2}>{String.fromCodePoint(0x1F3B2)}</ThemedText>
+      <ThemedText style={styles.text3}>{String.fromCodePoint(0x1F52B)}</ThemedText>
     </Animated.View>
   );
 }
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 28,
-    lineHeight: 32,
+    fontSize: 36,
+    lineHeight: 42,
     marginTop: -6,
+  },
+  text2: {
+    fontSize: 36,
+    lineHeight: 42,
+    marginTop: -12,
+    marginLeft: 40
+  },
+  text3: {
+    fontSize: 36,
+    lineHeight: 42,
+    marginTop: 0,
   },
 });
