@@ -22,7 +22,7 @@ export function GamesLogo() {
   }));
 
   return (
-    <Animated.View style={animatedStyle}>
+    <Animated.View style={animatedStyle} className="flex-1">
       <ThemedText style={styles.text}>{String.fromCodePoint(0x1F9E9)}</ThemedText>
       <ThemedText style={styles.text2}>{String.fromCodePoint(0x1F3B2)}</ThemedText>
       <ThemedText style={styles.text3}>{String.fromCodePoint(0x1F52B)}</ThemedText>
