@@ -24,6 +24,9 @@ module.exports = {
         paleYellow: {
           100: '#F2E085'
         },
+        backgroundWhite: {
+          100: '#F6FAFF'
+        }
       },
       fontFamily: {
         pthin: ["Poppins-Thin", "sans-serif"],
