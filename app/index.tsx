@@ -22,7 +22,7 @@ export default function HomeScreen() {
                 <GamesLogo/>
             </ThemedView>
             <View className="flex-1 justify-items-center bg-amber-600">
-                <Link href="/dashboard" className="text-4xl">Dashboard</Link>
+                <Link href="/dashboard" className="text-4xl">Login!</Link>
             </View>
 
         </ParallaxScrollView>
