@@ -1,18 +1,20 @@
 import {View, Text, TextInput, Button} from "react-native";
 import { useForm, Controller } from "react-hook-form"
-import DateTimePicker from "react-native-ui-datepicker/src/DateTimePicker";
 
 
-const CreateEvent = () => {
+const AddGameForm = () => {
     const {
         control,
         handleSubmit,
         formState: { errors },
     } = useForm({
         defaultValues: {
-            eventName: "",
-            eventDate: "",
-
+            gameName: "",
+            gameDesc: "",
+            pictures: [],
+            numOfTimers: 1,
+            numOfPlayers: 0,
+            secondaryGames: []
         },
     })
     const onSubmit = (data) => console.log(data);
@@ -27,15 +29,15 @@ const CreateEvent = () => {
                 }}
                 render={({ field: { onChange, onBlur, value } }) => (
                     <TextInput
-                        placeholder="Event name:"
+                        placeholder="Game name:"
                         onBlur={onBlur}
                         onChangeText={onChange}
                         value={value}
                     />
                 )}
-                name="eventName"
+                name="gameName"
             />
-            {errors.eventName && <Text>This is required.</Text>}
+            {errors.gameName && <Text>This is required.</Text>}
 
             <Controller
                 control={control}
@@ -43,19 +45,22 @@ const CreateEvent = () => {
                     required: true,
                 }}
                 render={({ field: { onChange, onBlur, value } }) => (
-                    <DateTimePicker
-                        mode="single"
-                        date={value}
-                        onChange={onChange}
+                    <TextInput
+                        placeholder="Game description:"
+                        onBlur={onBlur}
+                        onChangeText={onChange}
+                        value={value}
                     />
                 )}
-                name="eventDate"
+                name="gameDesc"
             />
-            {errors.eventDate && <Text>This is required.</Text>}
+            {errors.gameDesc && <Text>This is required.</Text>}
 
-            <Button title="Submit" onPress={handleSubmit(onSubmit)} />
+            <Text>Pictures:</Text>
+
+
         </View>
     )
 }
 
-export default CreateEvent;
+export default AddGameForm;
